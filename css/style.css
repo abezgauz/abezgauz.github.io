@@ -60,7 +60,7 @@ p {line-height: 2.1em; font-size: 120%;}
 
 /* Поднавигация по сайту */
 .coverText > p {padding: 15px 0;}
-.coverText > p > a {font-size: 140%;}
+.coverText > p > a {font-size: 130%;}
 .backAndForth {font-size: 160%;}
 .backAndForth {
 font-size: 160%;
@@ -91,7 +91,7 @@ width: 60px;
 direction: rtl;
 unicode-bidi: bidi-override;
 }
-.menuProjects li {padding-left: 10px;}
+.menuProjects li {padding: 5px 0 5px 10px;}
 
 
 /*
