@@ -1,0 +1,209 @@
+@import url('normalize.css');
+@import url('skeleton.css');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url('font-awesome.min.css');
+
+/*
+ * base elements
+ */
+body {
+-webkit-font-smoothing: antialiased;
+color: #111; font-weight: 300; font-size: 1em; font-family: 'Metal Mania', cursive;
+background: rgb(255, 255, 255);
+width: 300%; min-width: 250px;
+}
+
+body, div, :not(.menuProjects) {
+-ms-overflow-style: none;
+scrollbar-width: none;
+scroll-behavior: smooth;
+}
+
+.coverText, 
+.backAndForth, 
+.meMenu, 
+.menuProjects {
+user-select: none;
+-ms-user-select: none;
+-moz-user-select: none;
+-khtml-user-select: none;
+-webkit-user-select: none;
+-webkit-touch-callout: none;
+}
+
+*:hover, a {
+transition: 0.2s;
+-ms-transition: 0.2s;
+-o-transition: 0.2s;
+-moz-transition: 0.2s;
+-webkit-transition: 0.2s;
+}
+
+a {text-decoration: none; color: #000; font-weight: 600;}
+a:hover, a:active {text-decoration: underline;}
+
+h1 {font-size: 400%; font-size: 9vw;}
+h2 {font-size: 300%;}
+h3 {font-size: 200%;}
+h4 {font-size: 150%;}
+
+p {line-height: 2.1em; font-size: 120%;}
+
+
+/*
+ * Навигация по сайту
+ */
+.coverActive, .aboutActive, .portfolioActive {top: 0;}
+.coverActive {right: 0%;}
+.aboutActive {right: -100%;}
+.portfolioActive {right: -200%;}
+
+/* Поднавигация по сайту */
+.coverText > p {padding: 15px 0;}
+.coverText > p > a {font-size: 140%;}
+.backAndForth {font-size: 160%;}
+.backAndForth {
+font-size: 160%;
+left: 50%;
+transform: translateX(-50%);
+}
+.backAndForth li {
+margin: 0 5px;
+display: inline-block;
+}
+
+/* Поднавигации по разделам */
+.meMenu, .menuProjects {
+text-align: center;
+background: rgba(255, 255, 255, .6);
+left: 0; top: 0;
+height: 100%;
+}
+.meMenu a, .menuProjects a {
+font-size: 125%;
+writing-mode: sideways-lr;
+height: 25%;
+}
+.meMenu a:hover, .menuProjects a:hover {opacity: .6;}
+.meMenu {width: 50px;}
+.menuProjects {
+width: 60px;
+direction: rtl;
+unicode-bidi: bidi-override;
+}
+.menuProjects li {padding-left: 10px;}
+
+
+/*
+ * Приемлемая поддержка
+ */
+#main {width: auto;}
+#cover, #about, #portfolio {margin: auto;}
+@media all and (max-width: 270px) {
+.coverText a {display: block;}
+}
+.coverLogo img {
+max-height: 100%; max-width: 100%;
+display: block;
+}
+.aboutContent {
+overflow-y: auto; overflow-x: hidden;
+height: 400%;
+}
+#skills, #experience, #contact, #me {min-height: 100%;}
+.aboutContentTitle {
+color: #fff;
+background: #000;
+padding: 3px 6px;
+}
+.portfolioContent {height: auto;}
+.portfolioContent > div {height: 100%;}
+.portfolioContent > div img {
+z-index: -1;
+opacity: .8;
+max-width: 100%;
+}
+
+
+/*
+ * transform + проценты
+ */
+#main, #cover, #about, #experience, #portfolio {height: 100%; width: 100%;}
+#cover {transform: translateX(0%);}
+#about {transform: translateX(-100%) translateY(-100%);}
+#portfolio {transform: translateX(-200%) translateY(-200%);}
+.coverText, .coverLogo {
+top: 50%;
+width: 50%;
+position: absolute;
+}
+.coverText {
+left: 25%;
+transform: translateX(-25%) translateY(-50%);
+}
+.coverLogo {
+right: 25%;
+transform: translateX(50%) translateY(-50%);
+}
+.aboutContent div {padding: 50px 15%;}
+
+
+/*
+ * То же самое, но на flex + единицах измерения viewport
+ */
+@supports (display: flex) {
+
+/* Отменяем трансформации и т.д. */
+#main, #cover, .coverText, .coverLogo, #about, #experience, #portfolio {transform: none;}
+.coverText, .coverLogo {left: 0; right: 0; top: 0; position: relative;}
+.aboutContent div {padding: 0px 0%;}
+
+/* Flex */
+#main, #skills, #experience, #contact, #me, .portfolioContent > div {display: flex;}
+#cover, #about, #portfolio {display: inline-flex;}
+#main {flex-direction: row-reverse;}
+#about, .coverText, #skills, #experience, #contact, #me, #portfolio, .portfolioContent > div {flex-direction: column;}
+#cover, .coverText, .coverLogo, #skills, #experience, #contact, #me, .portfolioContent > div {justify-content: center;}
+#cover, .coverLogo, .portfolioContent > div {align-items: center;}
+
+/* units viewport */
+#cover, #about, #skills, #experience, #contact, #me, #portfolio, .portfolioContent > div {width: 100vw;}
+#cover {height: 80vh;}
+.coverText, .coverLogo {display: inherit;}
+.coverText {
+padding: 2% 12%;
+width: 60vw;
+}
+.coverLogo {width: 40vw;}
+#about {height: 90vh;}
+.coverText, .coverLogo, #portfolio {height: 100vh;}
+#skills, #experience, #contact, #me {padding: 5px 15vw 0;}
+#portfolio > .backAndForth {padding-top: 5vh;}
+.portfolioContent > div {padding: 25px 15vw;}
+}
+
+
+/*
+ * Декорации
+ */
+ @supports (background-clip: text) or (-moz-background-clip: text) or (-webkit-background-clip: text) {
+#bay {-webkit-text-fill-color: #000;}
+#bay:hover {
+background: url(../img/cover.jpg) no-repeat top left/100%;
+background-clip: text;
+-moz-background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+}
+
+#cover:before {
+content: '';
+z-index: 9;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+background-image: url(../img/seamGLOBAL.svg);
+left: -18.6vw; top: 0;
+height: 100%; width: 30vw;
+position: absolute;
+}
