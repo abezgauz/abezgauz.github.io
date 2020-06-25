@@ -1,0 +1,253 @@
+@import url('normalize.css');
+@import url('font.css');
+
+
+/* 
+ * Global 
+ */
+ 
+:root {
+	--p-relative: relative;
+	--p-absolute: absolute;
+	--d-flex: flex;
+	--d-flex-inline: inline-flex;
+	--a-items-start: flex-start;
+	--a-items-end: flex-end;
+	--bg-p-cover: cover;
+	--bg-blackout: linear-gradient(180deg, rgba(0, 0, 0, 0) 52.74%, rgba(17, 13, 13, 0.9) 100%);
+}
+
+
+/*
+ * Global for width 1920px
+ */
+ 
+@media all and ( 
+	max-width: 1920px 
+		), all and ( 
+	min-width: 1920px /* min-width: 1920px share example */ 
+		) {
+
+	:root {
+		--base-page-width: 1920px;
+		--base-container-width: 1800px;
+	}
+
+	html { /* share example */
+		overflow-x: scroll
+	}
+
+}
+
+/*
+ * base elements
+ */
+ 
+html, 
+body {
+	width: var(--base-page-width)
+}
+
+body {
+	color: #F7F5F9; font-weight: 300; font-size: 1em;
+	background-color: rgb(0, 0, 0)
+}
+
+
+/*
+ * Header and Rooms
+ */
+ 
+.header, 
+.rooms {
+	position: var(--p-relative);
+	display: var(--d-flex);
+	height: auto;
+	margin: auto
+}
+
+
+/*
+ * Header
+ */
+ 
+.header {
+	width: var(--base-container-width);
+	font-family: MADEOuterSansRegularPERSONALUSE; font-style: normal; font-weight: bold; font-size: 14px; line-height: 18px;
+	margin-bottom: 50px; margin-top: 50px
+}
+
+.header > section, 
+.header > section * {
+	display: var(--d-flex-inline);
+}
+
+.header section:nth-child(1), 
+.header section:nth-child(3) {
+	width: calc( 50% - 100px )
+}
+
+.header section:nth-child(2) {
+	width: 200px
+}
+
+.header section:nth-child(1) {
+	justify-content: var(--a-items-start)
+}
+
+.header section:nth-child(1) * {
+	margin-right: 27px
+}
+
+.header section:nth-child(3) {
+	justify-content: var(--a-items-end)
+}
+
+.location li {
+	opacity: .3
+}
+
+.location li:nth-child(1), 
+.basket {
+	margin-left: 57px
+}
+
+.basket {
+	position: var(--p-relative);
+}
+
+.products {
+	position: var(--p-absolute);
+	right: -17px; top: -13px;
+}
+
+.products:after {
+	position: inherit;
+	left: 5px; top: 0;
+	color: red; content: '2';
+}
+
+.location li:nth-child(2) {
+	margin-left: 10px
+}
+
+
+/*
+ * Rooms
+ */
+ 
+.rooms {
+	width: calc( var(--base-container-width) - 2px )
+}
+
+.room {
+	display: var(--d-flex-inline);
+	--margin: 4.50px;
+	height: 800px; width: calc( var(--base-container-width) / 5 - var(--margin) * 2 );
+	flex-direction: column;
+	justify-content: start;
+	background-position: var(--bg-p-cover), var(--bg-p-cover);
+	margin: 4.50px
+}
+
+:nth-child(1).room {
+	background-image: var(--bg-blackout), url(../img/rooms/Img-3.jpg)
+	}
+:nth-child(2).room {
+	background-image: var(--bg-blackout), url(../img/rooms/Img-2.jpg)
+	}
+:nth-child(3).room {
+	position: inherit;
+	background-image: var(--bg-blackout), url(../img/rooms/Img-4.jpg)
+	}
+:nth-child(4).room {
+	background-image: var(--bg-blackout), url(../img/rooms/Img.jpg)
+	}
+:nth-child(5).room {
+	background-image: var(--bg-blackout), url(../img/rooms/Img-1.jpg)
+	}
+
+.room-cont h3 {
+	height: 716px;
+	padding: 630px 50px 54px
+}
+
+.room-cont p {
+	padding: 0 50px 54px
+}
+
+.room-cont h3 {
+	font-family: MADEOuterSansRegularPERSONALUSE; font-style: normal; font-weight: bold; font-size: 36px; line-height: 36px
+}
+
+.room-cont p {
+	font-family: MADEOuterSansThinPERSONALUSE; font-style: normal; font-weight: 250; font-size: 14px; line-height: 24px
+}
+
+.off {
+	position: var(--p-absolute);
+	height: 81.28px; width: calc( var(--base-container-width) / 5 + 3px );
+	left: 50%; transform: translateX(-50%);
+	top: 23px;
+	background-image: url(../img/rooms/Tape.png)
+}
+
+.off-content {
+	position: var(--p-relative);
+	display: var(--d-flex)
+}
+
+.off-content > * {
+	display: var(--d-flex-inline)
+}
+
+.off-content-left, 
+.off-content-right {
+	width: 50%;
+	flex-direction: column;
+	justify-content: center;
+	padding: 10px 15px
+}
+
+.off-content-left {
+align-items: var(--a-items-start);
+font-family: Morganite; font-style: normal; font-weight: bold; font-size: 56px; text-transform: uppercase
+}
+
+.off-content-right {
+	align-items: var(--a-items-end);
+	font-style: normal
+}
+
+.off-content-right p:nth-child(1) {
+font-family: MADEOuterSansThinPERSONALUSE; font-weight: 250; font-size: 14px
+}
+
+.off-content-right p:nth-child(2) {
+font-family: MADEOuterSansRegularPERSONALUSE; font-weight: 900; font-size: 20px
+}
+
+
+/* 
+ * Decoration
+ */
+.texture {
+	position: var(--p-absolute);
+	height: 574px; width: var(--base-page-width);
+	left: 0; top: 0;
+	background-image: url(../img/Texture.jpeg);
+	background-position: center;
+	background-size: var(--bg-p-cover);
+	background-repeat: no-repeat;
+	opacity: 60%
+}
+
+.active {
+	opacity: .9 !important
+}
+
+.mask {
+	display: inline-block;
+	height: 17.5px; width: 23.33px;
+	background: url(../img/rooms/Union.svg) no-repeat
+}

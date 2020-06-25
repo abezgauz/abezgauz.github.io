@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'Morganite';
+	src: url('../font/Morganite/Morganite-Bold.ttf');
+	font-weight: normal; font-style: normal
+}
+@font-face {
+	font-family: 'MADEOuterSansRegularPERSONALUSE';
+	src: url('../font/MOSP/MADEOuterSansRegularPERSONALUSE.otf');
+	font-weight: normal; font-style: normal
+}
+@font-face {
+	font-family: 'MADEOuterSansThinPERSONALUSE';
+	src: url('../font/MOSP/MADEOuterSansThinPERSONALUSE.otf');
+	font-weight: normal; font-style: normal
+}
+
+@font-face {
+	font-family: 'MADE Outer Sans Bold';
+	src: url('../font/MOSP/MOSPAltBold.otf');
+	font-weight: normal; font-style: normal
+}
