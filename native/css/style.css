@@ -19,9 +19,9 @@ transition: 0.2s;
 -webkit-transition: 0.2s;
 }
 
-h1, h2, h3 {text-align: center;}
+h1, h2 {text-align: center;}
 h1, h2 {font-size: 300%;}
-h3 {font-size: 200%;}
+h3, h4 {font-size: 200%;}
 
 p {line-height: 2.1em; font-size: 120%;}
 
@@ -31,5 +31,5 @@ p {line-height: 2.1em; font-size: 120%;}
 .aboutContentTitle {
 color: #fff;
 background: #000;
-padding: 3px 6px;
+padding: 3px 6px; margin: 0 5px;
 }
