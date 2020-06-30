@@ -13,7 +13,7 @@ background: rgb(255, 255, 255);
 width: 300%; min-width: 250px;
 }
 
-body, div, :not(.menuProjects) {
+body, div, :not(.menuProjects > ul) {
 -ms-overflow-style: none;
 scrollbar-width: none;
 scroll-behavior: smooth;
